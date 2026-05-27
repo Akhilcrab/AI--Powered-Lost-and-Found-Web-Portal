@@ -52,7 +52,8 @@ export default async function ReportDetailPage({ params }: { params: Promise<{ i
             <li><strong>Status:</strong> <span style={{ textTransform: 'capitalize', color: report.status === 'open' ? 'var(--success)' : 'inherit' }}>{report.status}</span></li>
             <li><strong>Reported By:</strong> {report.user.name || "Anonymous"}</li>
             <li><strong>Date:</strong> {new Date(report.createdAt).toLocaleDateString()}</li>
-            <li><strong>Location:</strong> {report.lat.toFixed(4)}, {report.lng.toFixed(4)}</li>
+            <li><strong>Location:</strong> {report.location}</li>
+            {report.landmark && <li><strong>Landmark:</strong> {report.landmark}</li>}
           </ul>
 
           <div style={{ marginTop: '2rem' }}>
