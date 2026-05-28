@@ -1,12 +1,10 @@
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 model User {
   id            String            @id @default(cuid())
   email         String            @unique
@@ -19,7 +17,6 @@ model User {
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 }
-
 model Report {
   id           String   @id @default(cuid())
   userId       String
@@ -39,7 +36,6 @@ model Report {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
-
 model Image {
   id           String   @id @default(cuid())
   reportId     String
@@ -49,7 +45,6 @@ model Image {
   embedding    String?
   createdAt    DateTime @default(now())
 }
-
 model Match {
   id            String            @id @default(cuid())
   lostReportId  String
@@ -62,7 +57,6 @@ model Match {
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 }
-
 model NotificationLog {
   id        String   @id @default(cuid())
   userId    String
