@@ -30,7 +30,6 @@
 11. [API Reference](#-api-reference)
 12. [Local Setup](#-local-setup)
 13. [Deployment](#-deployment)
-14. [Environment Variables](#-environment-variables)
 
 ---
 
@@ -509,23 +508,6 @@ Auto-deploys to **Vercel** on every push to `main`:
 2. Connect on [vercel.com](https://vercel.com)
 3. Add environment variables in the Vercel dashboard
 4. Vercel automatically runs `prisma generate && next build`
-
----
-
-## 🔐 Environment Variables
-
-```env
-# PostgreSQL connection string (use Neon, Supabase, or Railway for free hosting)
-DATABASE_URL="postgresql://user:password@host:5432/lostandfound"
-
-# Generate with: openssl rand -base64 32
-NEXTAUTH_SECRET="your-super-secret-key"
-
-# Your deployed URL (or http://localhost:3000 for local dev)
-NEXTAUTH_URL="https://your-deployment.vercel.app"
-```
-
-> `.env` is gitignored — never commit secrets.
 
 ---
 
